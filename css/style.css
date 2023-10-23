@@ -750,5 +750,14 @@ footer .copyright{
     section.contact .card-wrapper .card h6 {
         margin-bottom: 1rem;
     }
+    .split-paragraph::before {
+        content: "Erreiche dein volles Potenzial mit einem modernen Ansatz.";
+        display: block;
+    }
+
+    .split-paragraph::after {
+        content: "Gemeinsam gestalten wir deinen Weg zum Erfolg!";
+        display: block;
+    }
    
 }
