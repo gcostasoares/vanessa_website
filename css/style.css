@@ -582,12 +582,14 @@ footer .copyright{
     justify-content: flex-end;
     align-items: flex-end;
     flex-wrap: nowrap;
+    margin-left: 30vw;
+    
 }
 .mobile-nav ul li a{
     color:var(--secondary);
     text-decoration:none;
     font-size: 2rem;
-    margin-right: 20vw;
+    
    
    
 }
