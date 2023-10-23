@@ -265,7 +265,7 @@ section.about .social a img{
 section.freelancer{
     text-align: center;
     background: var(--babayblue);
-    color:var(--pure);
+    color:var(--dark);
     clip-path:polygon(0 0, 100% 0, 100% 100%, 67% 80%, 0 100%);
     padding-bottom:14rem;
 }
@@ -537,7 +537,7 @@ footer .copyright{
    top:0;
    left:0;
    z-index:1001;
-   background:var(--light);
+   background:var(--kindapink);
    width:100%;
    height:100%;
    padding:2rem;
@@ -576,15 +576,20 @@ footer .copyright{
 }
 
 .mobile-nav ul{
+    display: none;
     list-style-type: none;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-wrap: nowrap;
 }
 .mobile-nav ul li a{
     color:var(--secondary);
     text-decoration:none;
     font-size: 2rem;
-    margin-left: 60vw;
+    margin-right: 20vw;
    
-    right: 80%;
+   
 }
 
 @media (max-width:1024px){
@@ -733,7 +738,7 @@ footer .copyright{
         
         position: absolute;
         top: 30%;
-        left: 33%;
+        left: 50%;
     }
 
     .email {
