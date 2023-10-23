@@ -649,6 +649,9 @@ footer .copyright{
 }
 
 @media (max-width:776px){
+    header{
+        background-size: contain;
+    }
     .hero{
         flex-direction: column;
     }
@@ -738,13 +741,13 @@ footer .copyright{
         
         position: absolute;
         top: 30%;
-        left: 50%;
+        
     }
 
     .email {
         position: absolute;
         top: 60%;
-        left: 25%
+        
     }
     section.contact .card-wrapper .card h6 {
         margin-bottom: 1rem;
