@@ -598,7 +598,7 @@ footer .copyright{
     }
     .hamberger{
         position: fixed;
-        left: -80%;
+        left: -70%;
         display: block;
        
     }
@@ -650,7 +650,7 @@ footer .copyright{
 
 @media (max-width:776px){
     header{
-        background-size: contain;
+        height: 100vh;
     }
     .hero{
         flex-direction: column;
@@ -737,17 +737,13 @@ footer .copyright{
         margin-top: 9rem;
         
     }
-    .telephone {
-        
-        position: absolute;
-        top: 30%;
-        
+    .telephone{
+        margin-bottom: -100px;
+       
     }
 
     .email {
-        position: absolute;
-        top: 60%;
-        
+        margin-bottom: -100px;
     }
     section.contact .card-wrapper .card h6 {
         margin-bottom: 1rem;
