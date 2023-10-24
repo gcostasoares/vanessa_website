@@ -158,17 +158,7 @@ header nav .branding{
     margin-bottom:2rem;
     font-size: 15px;
 }
-@media (max-width: 780px) {
-    .hero .right h6 {
-        font-size: 20px; /* Adjusted font size */
-    }
-    .hero .right h1 {
-        font-size: 30px;
-    }
-    .hero .right p {
-        font-size: 5px; /* Adjusted font size */
-      }
-}
+
 
 
 section{
