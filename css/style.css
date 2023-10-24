@@ -158,7 +158,12 @@ header nav .branding{
     margin-bottom:2rem;
     font-size: 15px;
 }
-
+@media (max-width: 780px) {
+    .title {
+        transform: scale(0.8);
+        margin-top: 130px;
+    }
+}
 
 
 section{
@@ -420,6 +425,7 @@ section.contact .card-wrapper{
     justify-content: center;
     flex-direction: column;
     gap: 10px;
+    text-decoration: none;
    
 }
 
