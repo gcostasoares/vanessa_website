@@ -6,9 +6,9 @@
     --ternary:#898989;
     --light:#F2F2F2;
     --secondary:#070606;
-    --reallypink: #eb01a3;
-    --kindapink: #fe3bc2;
-    --creamy: #ffbae98f;
+    --reallypink: #F2F2F2;
+    --kindapink: #F2F2F2;
+    --creamy: #F2F2F2;
     --popgreen: #01eb49;
     --babayblue: #3bfe77;
 
@@ -71,37 +71,37 @@ html{
     justify-content: center;
 }
 header{
-    background-image: url('./vanessa1-min2.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: left center;
+    background-color: var(--primary);
     clip-path:polygon(0 0, 100% 0, 100% 100%, 70% 87%, 0 100%);
     position: relative;
-    height: 700px;
+    height: 80vh
 }
 .container{
     max-width:1152px;
     padding:0 15px;
     margin:0 auto;
 }
+
 .title {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: flex-start;
+    margin-top: 170px;
     text-align: end;
-  
+    
     width: 40vw;
-    min-width: 500px;
-    margin-top: -100px;
+    min-width: 400px;
     height: 600px;
-    padding: 20px; /* Add some padding for spacing */
+    /* Add some padding for spacing */
     overflow-y: auto; /* Add a vertical scrollbar when content exceeds the maximum height */
-    font-size: 1vw;
+
     position: absolute;
-    right:  10%;
+    right:  15%;
+    top: 0;
 
 }
+
 
 .title h6, .title h1, .title p {
     margin: 0; /* Reset margins for the text elements */
@@ -112,29 +112,7 @@ header{
 
 
 
-@media (min-width: 576px) {
-    .container {
-      max-width: 540px;
-    }
-  }
-  
-  @media (min-width: 768px) {
-    .container {
-      max-width: 720px;
-    }
-  }
-  
-  @media (min-width: 992px) {
-    .container {
-      max-width: 960px;
-    }
-  }
-  
-  @media (min-width: 1200px) {
-    .container {
-      max-width: 1152px;
-    }
-  }
+
 
 header nav .left a{
     color:var(--pure);
@@ -156,31 +134,29 @@ header nav {
 header nav .branding{
     margin-right:3rem;
 }
-.hero{
-    padding:5rem 0;
-}
+
 
 .hero .right{
     color:var(--pure);
 }
 .hero .right h6{
-    font-size:2.2vw;
-    color:var(--primary);
-    margin-bottom:0.5rem;
+    font-size:30px;
+    color:var(--dark);
+
 }
 .hero .right h1{
-    font-size:4vw;
-    font-weight:100;
+    font-size:40px;
+    font-weight:100px;
     line-height:1.2;
     
 }
 .hero .right h1 span{
-    color:var(--primary);
+    color:var(--dark);
 }
 .hero .right p{
     line-height:1.9;
     margin-bottom:2rem;
-    font-size: 1.4vw;
+    font-size: 15px;
 }
 
 
@@ -424,19 +400,37 @@ section.work .card-wrapper .card-3{
 }
 
 
-
-
+section.contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 section.contact .card-wrapper{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    margin-top: -7rem;
+    gap: 100px;
+   
 }
-section.contact .card-wrapper .card{
-    text-align: center;
-    margin: 5rem;
+.telephone{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+   
 }
+
+.email {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+       
+    }
+
 
 section.contact .card-wrapper .card h1{
     font-weight:400;
@@ -452,6 +446,7 @@ section.contact .card-wrapper .card h6{
     border: 1px solid var(--ternary);
     padding: 30px;
     border-radius: 0.5%;
+    width: 70vw;
 }
 section.contact .input-wrap{
     display:grid;
@@ -595,6 +590,9 @@ footer .copyright{
 }
 
 @media (max-width:1024px){
+    header {
+        height: 70vh;
+    }
     header #main-nav{
         display:none;
     }
@@ -604,23 +602,7 @@ footer .copyright{
         display: block;
        
     }
-    .hero .left img{
-        width:260px;
-    }
-    .hero .right h1{
-        font-size: 3rem;
-    }
-    .hero .right h6{
-       
-        font-size: 2rem;
-    }
-    .hero .right p{
-        font-size: 1rem;
-    }
-    .hero{
-        padding-top:10rem;
-        
-    }
+    
     header{
         clip-path: polygon(0 0, 100% 0, 100% 100%, 27% 89%, 0 100%);
     }
@@ -642,122 +624,97 @@ footer .copyright{
     }
    
     
-    section.blog .card-wrapper{
-        grid-template-columns: repeat(1, 1fr);
-    }
-    section.blog{
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 67% 97%, 0 100%);
-    }
+    
 }
-
-@media (max-width:776px){
-    header{
-        height: 100vh;
+@media (max-width: 776px) {
+    /* Header and hero styles */
+    header {
+        height: 70vh;
     }
-    .hero{
+
+    .hero {
         flex-direction: column;
     }
-    header{
+
+    header {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 69% 95%, 0 100%);
     }
-    .hero .right{
-        position: absolute;
-        top:40%;
-        right: 0;
-        padding:0 1rem;
-        background:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.9));
+    .title {
+        width: 10vw;
     }
-    .hero .left{
-        margin-top:-5rem;
-        margin-right: -9rem;
-        padding-bottom:4rem;
-    }
-    .hero .right h1 {
-        font-size: 6vw;
-        margin-bottom: 15px;
-    }
-    .hero .right h6 {
-        font-size: 6vw;
-        
-    }
-    .hero .right p{
-        font-size: 3vw;
-    }
- 
-    .about-inner-wrap{
+   
+
+    /* About section styles */
+    .about-inner-wrap {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        
     }
-    .about .right{
+
+    .about .right {
         margin: 0;
         text-align: center;
-        margin-top:2rem;
+        margin-top: 2rem;
     }
-    .about .right .social{
+
+    .about .right .social {
         justify-content: center;
     }
-    section{
-        padding: 4rem 0;
-    }
-    .abilities h1{
+
+    /* Abilities section styles */
+    .abilities h1 {
         margin-bottom: 20px;
     }
-    section.services .card-wrapper{
-        grid-template-columns: repeat(1, 1fr);
-        margin-top:6rem;
+
+    /* Freelancer section styles */
+    section.freelancer h1 {
+        line-height: 1.2;
     }
-    section.freelancer h1{
-        line-height:1.2;
-    }
-    section.freelancer{
+
+    section.freelancer {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 67% 90%, 0 100%);
         padding-bottom: 6rem;
     }
-    section.freelancer p{
+
+    section.freelancer p {
         margin: 0 20px;
     }
-    section.reviews .slider .slide{
-        padding:0;
+
+    /* Reviews section styles */
+    section.reviews .slider .slide {
+        padding: 0;
     }
-    .section-heading + p{
+
+    /* Section heading and paragraph styles */
+    .section-heading + p {
         margin-bottom: 3rem;
     }
-    section.contact .card-wrapper{
+
+    /* Contact section styles */
+    section.contact {
+        text-align: center;
+    }
+
+    .card-wrapper {
         display: flex;
-        justify-content: center;
-        align-items: center;
         flex-direction: column;
-        
-        position: relative;
-       
-     
+        align-items: center;
+        justify-content: center;
     }
-    section.contact .card-wrapper .card{
-      
-        margin-top: 9rem;
-        
-    }
-    .telephone{
-        margin-bottom: -100px;
-       
+    .card {
+        margin: 10px 0;
     }
 
-    .email {
-        margin-bottom: -100px;
-    }
-    section.contact .card-wrapper .card h6 {
-        margin-bottom: 1rem;
-    }
-    .split-paragraph::before {
-        content: "Erreiche dein volles Potenzial mit einem modernen Ansatz.";
-        display: block;
+    .form {
+        width: 100%;
+       
+        margin: 0 auto;
+        padding: 1rem;
     }
 
-    .split-paragraph::after {
-        content: "Gemeinsam gestalten wir deinen Weg zum Erfolg!";
+    .input-wrap,
+    .input-wrap-2 {
         display: block;
+        text-align: left;
     }
-   
 }
