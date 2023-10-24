@@ -47,12 +47,17 @@ html{
 }
 .btn-primary{
     background:var(--primary);
-    color:var(--secondary);
+    color:var(--pure);
 }
 .btn-primary:hover{
     background:transparent;
     border-color: var(--primary);
     color:var(--primary);
+}
+@media (max-width: 1200px) {
+    .btn-primary:hover {
+        display: none;
+    }
 }
 .btn-secondary{
     background:transparent;
@@ -162,6 +167,7 @@ header nav .branding{
     .title {
         transform: scale(0.8);
         margin-top: 130px;
+        margin-right: -15px;
     }
 }
 
