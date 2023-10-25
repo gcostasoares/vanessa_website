@@ -1,7 +1,5 @@
 
 
-
-
 $(document).ready(function(){
     $('.slider').slick({
         arrows:false,
@@ -108,9 +106,7 @@ if (windowWidth<780) {
             handyLines.style.background= "#F2F2F2";
             headLine.style.background = "#F2F2F2";
         }
-        if (handyScroll > 1340) {
-            selfDiscovery.style.backgroundImage = 'url(./images/self_discovery.jpg)';
-        }
+       
     };
 };
 

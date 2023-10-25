@@ -17,7 +17,7 @@
 }
 
 body{
-    font-family:'Poppins',sans-serif;
+    font-family:'Lato', sans-serif;
 }
 
 html{
@@ -38,8 +38,10 @@ html{
 }
 
 .hamberger{
+    position: fixed;
+    left: 10%;
     margin-top: 30px;
-    margin-left: 3vw;
+
     z-index:11;
     background:none;
     border:none;
@@ -87,7 +89,7 @@ html{
 .times{
    position:fixed;
    margin-top: 30px;
-   margin-left: 3vw;
+   left: 10%;
    border: none;
    background:none;
    outline:none;
@@ -431,12 +433,16 @@ header nav {
         font-size: 30px;
     }
     .self-discovery {
-        background-image: none;
-        background-size: cover;
         padding-bottom: 300px;
         flex-direction: column;
         margin-top: 200px;
-        transition: all .3s ease;
+        align-items: center;
+        
+    }
+    .self-discovery img {
+        position: absolute;
+        left: 20%;
+        bottom: 0;
     }
     .about-my-work {
         font-size: 20px;
@@ -446,9 +452,7 @@ header nav {
         margin-bottom: 50px;
         margin-top: -100px;
     }
-    .self-discovery img {
-        display: none;
-    }
+    
     
 }
 
@@ -506,7 +510,8 @@ section.freelancer span {
     margin-top: 100px;
 }
 .leistungen-headtitle h1{
-    font-size: 3rem;
+    font-size: 2rem;
+    font-weight:400;
 }
 .leistungen {
     display: flex;
@@ -517,6 +522,9 @@ section.freelancer span {
     margin: 100px 50px;
     font-family:'Lato', sans-serif;
 }
+.leistungen-headtitle span {
+    color: var(--primary);
+}
 .leistung-pic img {
     width: 600px;
 }
@@ -525,8 +533,11 @@ section.freelancer span {
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
+    font-size: 16px;
+    font-weight:400;
 }
 .leistungen-title h2 {
+    color: var(--primary);
     margin-bottom: 30px;
 }
 .leistungen-title p {
@@ -550,314 +561,27 @@ section.freelancer span {
         width: 65vw;
     }
 }
-
-/*
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.hero .right{
-    color:var(--pure);
-}
-.hero .right h6{
-    font-size:30px;
-    color:var(--babayblue);
-
-}
-.hero .right h1{
-    font-size:40px;
-    font-weight:100px;
-    line-height:1.2;
-    
-}
-.hero .right h1 span{
-    color:var(--babayblue);
-}
-.hero .right p{
-    line-height:1.9;
-    margin-bottom:2rem;
-    font-size: 15px;
-}
-@media (max-width: 780px) {
-    .title {
-       
-        transform: scale(0.8);
-        margin-top: 130px;
-        margin-right: -35px;
-    }
-}
-
-.telephone h6 {
-    text-decoration: none;
-    color: #000; /* Set the desired color, e.g., black */
-
-
-/*
-section{
-    padding:6rem 0;
-}
-
-section.about {
-    background-color: #F2F2F2;
-}
-section.about .about-me-img{
-    height:450px;
-    margin-top: -50px;
-}
-
-
-
-section.about h1{
-    margin-bottom: 1rem;
-    font-size:20px;
-    font-weight:400;
-}
-section.about h1 span{
-    color:var(--primary);
-}
-section.about h3{
-    font-size: 1rem;
-    margin-bottom:1rem;
-    font-weight: 400;
-}
-
-section.about p{
-    font-family:'Lato', sans-serif;
-    color:var(--ternary);
-    line-height: 1.8;
-    margin-bottom:2rem;
-}
-.sun {
-    width: 200px;
-}
-section.about .social{
-    display:flex;
-}
-section.about .social a{
-    background:var(--dark);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width:35px;
-    height:35px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    margin-right:0.6rem;
-    transition: all .3s ease;
-    -webkit-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    -o-transition: all .3s ease;
-}
-section.about .social a:hover{
-    background:var(--primary);
-}
-section.about .social a img{
-    width:100%;
-    height:100%;
-    padding:0.5rem;
-}
-
-.section-heading{
-   color:var(--secondary); 
-   text-align: center;
-   margin-bottom:1rem;
-   line-height: 0.5;
-}
-
-.section-heading span{
-    color:var(--primary);
-}
-.section-heading + p{
-   color:var(--ternary);
-   font-family:'Lato', sans-serif;
-   margin-bottom:8rem;
-    text-align: center;
-}
-
-
-section.freelancer{
-    text-align: center;
-    background: var(--babayblue);
-    color:var(--dark);
-    clip-path:polygon(0 0, 100% 0, 100% 100%, 67% 80%, 0 100%);
-    padding-bottom:14rem;
-}
-section.freelancer h1{
-    font-size:3rem;
-    margin-bottom:0.5rem;
-}
-section.freelancer p{
-    font-size:1.3rem;
-    margin-bottom: 2rem;
-    font-family:'Lato', sans-serif;
-}
-section.freelancer span {
-    color: var(--primary);
-}
-
-section.work{
-    background:var(--pinterestblue);
-
-}
-section.work .abilities {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  
-    margin: 0 5vw;
-}
-.meine-arbeit {
-   
-    width: 70vw;
-}
-
-section.work .card-wrapper{
-    display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-
-    width: 100%;
-
-}
-
-section.work .card-wrapper .card-1{
-   
-    height:450px;
-    width: auto;
-    border: 2px solid var(--ternary);
-    padding: 20px;
-    color: var(--secondary);
-    margin: 0 10px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    
-}
-
-
-.headtitle-1{
- 
-    width: 300px;
-    
-}
-.headtitle-2 {
-   
-    width: 300px; 
-}
-.headtitle-3 {
-
-    width: 300px; 
-}
-.card-1 h2 {
-    color: var(--primary);
-    text-align: center;
-    font-size: 20px;
-}
-.card-1 p{
-    text-align: justify;
-}
-section.work .card-wrapper .card-2{
-    position:relative;
-    height:450px;
-    width: auto;
-    border: 2px solid var(--ternary);
-    padding: 20px;
-    color: var(--secondary);
-    margin: 0 10px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-   
-    
-}
-.card-2 h2 {
-    color: var(--primary);
-    text-align: center;
-    font-size: 20px;
-}
-.card-2 p{
-    text-align: justify;
-
-}
-section.work .card-wrapper .card-3{
-    position:relative;
-    height:450px;
-    width: auto;
-    border: 2px solid var(--ternary);
-    padding: 20px;
-    color: var(--secondary);
-    margin: 0 10px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-   
-    
-}
-.card-3 h2 {
-    color: var(--primary);
-    text-align: center;
-    font-size: 20px;
-}
-
-.card-3 p{
-    text-align: justify;
-}
-.space-between{
-    margin: 20px 0;
-    border-top: 1px solid var(--ternary);
-}
-
-@media (max-width: 1210px) {
-    section.work .card-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 30px;
-        
-    }
-    section.work .card-wrapper .card-1 {
-        width: 80vw;
-        height: auto;
-    }
-    section.work .card-wrapper .card-2 {
-        width: 80vw;
-        height: auto;
-    }
-    section.work .card-wrapper .card-3 {
-        width: 80vw;
-        height: auto;
-    }
-    
-}
-
-
 section.contact {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+    padding-bottom: 100px;
 }
-section.contact .card{
+section.contact span {
+    color: var(--primary);
+}
+.container p{
+    margin-bottom: 100px;
+}
+.section-heading {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+section.contact .contact-cards{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -885,11 +609,11 @@ section.contact .card{
     }
 
 
-section.contact .card-wrapper .card h1{
+section.contact .card-wrapper .contact-cards h1{
     font-weight:400;
     margin-bottom:1rem;
 }
-section.contact .card-wrapper .card h6{
+section.contact .card-wrapper .contact-cards h6{
     font-size:1rem;
     color:var(--ternary);
     font-weight:400;
@@ -909,7 +633,7 @@ section.contact .input-wrap{
     
 
 }
-@media (max-width:776px) {
+@media (max-width:780px) {
     section.contact .input-wrap {
         grid-template-columns: 1fr;
         
@@ -960,129 +684,25 @@ footer .copyright{
     color:var(--ternary);
 }
 
+@media (max-width: 780px) {
 
-
-
-@media (max-width:1024px){
-    header {
-        height: 70vh;
-    }
-    header #main-nav{
-        display:none;
-    }
-    .hamberger{
-        position: fixed;
-        left: -70%;
-        display: block;
-       
-    }
-    
-    header{
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 27% 89%, 0 100%);
-    }
-    section.about .flex-1 {
-        
-        margin-left: 2vw;
-    }
-    section.about .about-me-img{
-        height: 360px;
-       
-    }
-    
-    section.freelancer h1{
-        font-size: 5vw;
-        margin-bottom: 30px;
-    }
-    section.freelancer p {
-        font-size: 2.6vw;
-    }
-   
-    
-    
-}
-
-@media (max-width: 776px) {
-    /* Header and hero styles */
-    /*
-    header {
-        height: 70vh;
-    }
-
-    .hero {
-        flex-direction: column;
-    }
-
-    header {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 69% 95%, 0 100%);
-    }
-    .title {
-        width: 10vw;
-    }
-   
-
-    /* About section styles 
-    .about-inner-wrap {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .about .right {
-        margin: 0;
-        text-align: center;
-        margin-top: 2rem;
-    }
-
-    .about .right .social {
-        justify-content: center;
-    }
-
-    /* Abilities section styles 
-    .abilities h1 {
-        margin-bottom: 20px;
-    }
-
-    /* Freelancer section styles 
-    section.freelancer h1 {
-        line-height: 1.2;
-    }
-
-    section.freelancer {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 67% 90%, 0 100%);
-        padding-bottom: 6rem;
-    }
-
-    section.freelancer p {
-        margin: 0 20px;
-    }
-
-    /* Reviews section styles 
-    section.reviews .slider .slide {
-        padding: 0;
-    }
-
-    /* Section heading and paragraph styles 
-    .section-heading + p {
-        margin-bottom: 3rem;
-    }
-
-    /* Contact section styles 
-    section.contact {
-        text-align: center;
-    }
-
-    .card-wrapper {
+    section.contact .contact-cards {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
-    .card {
-        margin: 10px 0;
+
+    .telephone, .email {
+        text-align: center;
     }
+    .email {
+        margin-top: -70px;
+    }
+  
 
     .form {
-        width: 100%;
+        width: 80%;
        
         margin: 0 auto;
         padding: 1rem;
@@ -1094,3 +714,5 @@ footer .copyright{
         text-align: left;
     }
 }
+
+
