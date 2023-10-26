@@ -728,6 +728,7 @@ section.contact .btn-senden{
     margin-top:2rem;
     font-size: 35px;
     border : 0;
+    text-decoration: none;
    
 }
 section.contact .btn-senden:hover {
