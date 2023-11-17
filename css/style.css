@@ -428,6 +428,9 @@ header nav {
     font-family:'Lato', sans-serif;
     
 }
+.about-my-work p{
+    font-size: 20px;
+}
 @media (max-width: 780px) {
     .motto {
         margin-top: 100px;
