@@ -31,9 +31,9 @@
         <div class="mobile-nav" id="mobile-nav">
             <button class="times"><img src="./images/times.svg" alt=""></button>
             <ul id="ul">
-                <li><a href="#container">Home</a></li>
+                
                 <li><a href="#about">Über Vanessa</a></li>
-                <li><a href="#work">Leistungen</a></li>
+                <li><a href="#leistungen">Leistungen</a></li>
                 <li><a href="#contact">Work</a></li>
                
             </ul>
@@ -44,9 +44,9 @@
             <nav id="main-nav" class="main-nav">
                 
                     <div class="navbar">
-                        <a href="#container">Home</a>
+                       
                         <a href="#about">Über Vanessa</a>
-                        <a href="#work">Leistungen</a>
+                        <a href="#leistungen">Leistungen</a>
                         <a href="#contact">Kontakt</a>
                     </div>
               
@@ -106,7 +106,7 @@
         </section>
 
         <section>
-            <div class="leistungen-headtitle">
+            <div class="leistungen-headtitle" id="leistungen">
                 <h1>Das sind meine <span>Leistungen</span></h1>
             </div>
             <div class="leistungen">
@@ -132,7 +132,7 @@
                 </div>
                 
                 <div class="formular">
-                    <form class="form" id="kontakt" onsubmit="sendEmail(event)">
+                    <form class="form" id="kontakt">
                         
                         <div class="contact-info">
                             <div class="card-wrapper">
@@ -140,11 +140,11 @@
                                     <h5>Get In Touch</h5>
                                     <div class="telephone">
                                         <img src="./images/telephone.jpg">
-                                        <h6>985 123 7856</h6>
+                                        <h6>+49 178 5889783</h6>
                                     </div>
                                     <div class="email">
                                         <img src="./images/email.jpg">
-                                        <h6>support@companyname.com</h6>
+                                        <h6>contact@vanessagunia.com</h6>
                                     </div>
                                 </div>
                             </div>
@@ -162,11 +162,14 @@
                             </div>
 
                             <div class="btn-wrapper">
-                                <button type="submit" class="btn-senden">Senden</button>
+                                <button type="button" class="btn-senden" onclick="sendEmail()" id="button">Senden</button>
                             </div>
                         </div>
 
                     </form>
+                    <div class="message-success" id="success">
+                        <p>"Vielen Dank für deine Nachricht! Sie wurde erfolgreich übermittelt. Ich werde mich umgehend bei dir melden</p>
+                    </div>
                 </div>
 
             </div>
