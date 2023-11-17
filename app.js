@@ -1,232 +1,146 @@
-const menuBtn = document.querySelector('.btn');
-let menuOpen = false;
-
-menuBtn.addEventListener('click', () => {
-  if (!menuOpen) {
-    menuBtn.classList.add('open');
-    menuOpen = true;
-  } else {
-    menuBtn.classList.remove('open');
-    menuOpen = false;
-  }
-});
-
-const bgmenuBurger = document.getElementById("new_menu");
-const menuBurger = document.getElementById("burger_menu");
-const menuItems = document.getElementById("menu_items");
-const items = document.getElementById("items");
-let menubgOpen = false;
-
-menuItems.style.opacity = "0%";
-items.style.display = 'none';
-
-menuBurger.addEventListener("click", () => {
-  if (!menuOpen) {
-    bgmenuBurger.style.transform = "translateX(100%)";
-    menuItems.style.opacity = "0%";
-    menuItems.style.display = "none";
-    menubgOpen = true;
-    items.style.display = 'none';
-
-  } else {
-    bgmenuBurger.style.transform = "translateX(0)";
-    menuItems.style.opacity = "100%";
-    menuItems.style.display = "flex";
-    menubgOpen = false;
-    items.style.display = 'flex';
-  }
-});
 
 
-
-
-items.addEventListener("click", () => {
-	bgmenuBurger.style.transform = "translateX(100%)";
-    menuItems.style.opacity = "0%";
-    menuItems.style.display = "none";
-	menuBtn.classList.remove('open');
-    menuOpen = false;
-});
-
-window.addEventListener("scroll", function () {
-  var element = document.querySelector(".perspective-text");
-  var formSection = document.getElementById("form");
-  var formSectionTop = formSection.offsetTop;
-  var scrollPosition = window.scrollY;
-
-  if (scrollPosition >= formSectionTop - 400) {
-    element.classList.add("animate");
-  } else {
-    element.classList.remove("animate");
-  }
-});
-
-// Smooth scrolling for menu links
-const navLinks = document.querySelectorAll(".navbar a");
-
-navLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    const targetId = link.getAttribute("href").substring(1);
-    const targetSection = document.getElementById(targetId);
-
-    if (targetSection) {
-      targetSection.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  });
-});
-
-const navItems = document.querySelectorAll(".menu_items a");
-
-navItems.forEach((item) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    const targetId = link.getAttribute("href").substring(1);
-    const targetSection = document.getElementById(targetId);
-
-    if (targetSection) {
-      targetSection.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  });
-});
-
-const form = document.getElementById('kontakt');
-const username = document.getElementById('username');
-const email = document.getElementById('email');
-
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  checkInputs();
-});
-
-let nameValidation = false;
-let emailValidation = false;
-let messageValidation = false;
-
-function checkInputs() {
-  const usernameValue = username.value.trim();
-  const emailValue = email.value.trim();
-
-  if (usernameValue === '') {
-    setErrorFor(username, 'Name ist ungültig');
-  } else {
-    setSuccessFor(username);
-    nameValidation = true;
-  }
-
-  if (emailValue === '') {
-    setErrorFor(email, 'Emailadresse ist ungültig');
-  } else if (!isEmail(emailValue)) {
-    setErrorFor(email, 'Not a valid email');
-  } else {
-    setSuccessFor(email);
-    emailValidation = true;
-  }
-
-
-  if (nameValidation && emailValidation && messageValidation) {
-    sendEmail();
-    function sendEmail() {
-      var name = document.getElementById('username').value;
-      var email = document.getElementById('email').value;
-      var message = document.querySelector('.message textarea').value;
-      var messageSuccess = document.getElementById('message-success');
-      var messageError = document.getElementById('message-error');
+$(document).ready(function(){
+    $('.slider').slick({
+        arrows:false,
+        dots:true,
+        appendDots:'.slider-dots',
+        dotsClass:'dots'
+    });
     
-      emailjs.send("service_8ydndpo", "template_kwpvdnm", {
-        from_name: name,
-        from_email: email,
-        message_textarea: message
-      }).then(
-        function(response) {
-          console.log("Email sent successfully:", response);
-          kontakt.style.display = 'none';
-          messageSuccess.style.display = 'flex';
-        },
-        function(error) {
-          console.log("Email failed to send:", error);
-          messageError.style.display = 'flex';
-        }
-      );
-    }
-  }
-}
+    
+    let hamberger = document.querySelector('.hamberger');
+    let times = document.querySelector('.times');
+    let mobileNav = document.querySelector('.mobile-nav');
+    const ul = document.getElementById('ul')
+    
+    hamberger.addEventListener('click', function(){
+      mobileNav.classList.add('open');
+      ul.style.display = "flex";  
+    });
+    
+    mobileNav.addEventListener('click', function(){
+        mobileNav.classList.remove('open'); 
+        ul.style.display = "none";
+    });
 
-function setErrorFor(input, message) {
-  const formControl = input.parentElement;
-  const small = formControl.querySelector('small');
-  formControl.className = 'form-control error';
-  small.innerText = message;
-}
 
-function setSuccessFor(input) {
-  const formControl = input.parentElement;
-  formControl.className = 'form-control success';
-  messageValidation = true;
-}
-
-function isEmail(email) {
-  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zAZ]{2,}))$/.test(email);
-}
+    
+    });
 
 
 
+    
+    let firstLine = document.getElementById('line1');
+    let secondLine = document.getElementById('line2');
+    let headLine = document.getElementById('headline');
+    let meineArbeit = document.getElementById('meine-arbeit');
+    let lines = document.getElementById('lines');
+    var windowWidth = window.innerWidth;
+    console.log(windowWidth)
 
-function changeBackgroundColor(color) {
-  document.body.style.backgroundColor = color;
-}
-
-window.addEventListener("scroll", () => {
-  var scrollPosition = window.scrollY;
-  var aboutmeSection = document.getElementById("aboutme");
-  var aboutmeSectionTop = aboutmeSection.offsetTop;
-  var portfolioSection = document.getElementById("portfolio");
-  var portfolioSectionTop = portfolioSection.offsetTop;
-  var formSection = document.getElementById("form");
-  var formSectionTop = formSection.offsetTop;
-  var logoElements = document.getElementsByClassName("logo");
-
-  for (var i = 0; i < logoElements.length; i++) {
-    if (scrollPosition === 0) {
-      logoElements[i].style.opacity = 0; // Hide with fading effect
-      logoElements[i].style.pointerEvents = "none"; // Make it unclickable
+    if( windowWidth >= 1400) {
+        newMarginleft = -5;
+    } else if (windowWidth < 1400 && windowWidth > 1100) {
+        newMarginleft = -(1500 - windowWidth)/100 * 6;
+    } else if (windowWidth <= 1200 && windowWidth > 1100) {
+        newMarginleft = -(1500 - windowWidth)/100 * 5.5;
+    } else if (windowWidth <= 1100 && windowWidth > 900) {
+        newMarginleft = -(1500 - windowWidth)/100 * 2.8;
+    } else if (windowWidth <= 900 && windowWidth>700) {
+        newMarginleft = -(1500 - windowWidth)/100 * 4;
+    } else if (windowWidth <= 700 && windowWidth > 500) {
+        newMarginleft = -(1500 - windowWidth)/100 * 5;
     } else {
-      logoElements[i].style.opacity = 1; // Show with fading effect
-      logoElements[i].style.pointerEvents = "auto"; // Make it clickable
+        newMarginleft = 0;
+    };
+    
+    lines.style.marginLeft = `${newMarginleft}vw`;
+
+    
+    window.onscroll = () => {
+    var scrollIndex = window.scrollY - 500;
+    
+    
+    firstLine.style.left = `${scrollIndex}px`;
+    secondLine.style.right = `${scrollIndex}px`;
+    stopScroll = 300;
+
+    if (scrollIndex >= stopScroll) {
+        firstLine.style.left = stopScroll + 'px';
+        secondLine.style.right = stopScroll + 'px';
+        secondLine.style.color = "white";
+        headLine.style.background = "#b16b51";
+        lines.style.background = "#b16b51";
+
+        setTimeout(() => {
+            meineArbeit.style.opacity = 1;
+        }, 500);
+
+    } else {
+        headLine.style.background = "#F2F2F2";
+        lines.style.background = "#F2F2F2";
+        secondLine.style.color = "black";
     }
-  }
+};
 
+var handyLines = document.getElementById('lines-handy');
+var aboutVanessa = document.getElementById('about');
+var selfDiscovery = document.getElementById('self-discovery');
+
+if (windowWidth<780) {
+    window.onscroll = () => {
+        var handyScroll = window.scrollY; 
+        console.log(handyScroll);
+        if (handyScroll > 540) {
+            aboutVanessa.style.background = "#b16b51";
+            handyLines.style.background= "#b16b51";
+            headLine.style.background = "#b16b51";
+            setTimeout(() => {
+                meineArbeit.style.opacity = 1;
+            }, 500);
+            
+        }
+        else {
+            aboutVanessa.style.background = "#F2F2F2";
+            handyLines.style.background= "#F2F2F2";
+            headLine.style.background = "#F2F2F2";
+        }
+       
+    };
+};
+
+sendEmail();
+function sendEmail() {
  
-});
+  var name = document.getElementById('username').value;
+  var email = document.getElementById('email').value;
+  var subject = document.getElementById('betreff').value;
+  var message = document.getElementById('text').value;
 
-var logoElementsOnLoad = document.getElementsByClassName("logo");
-for (var i = 0; i < logoElementsOnLoad.length; i++) {
-  logoElementsOnLoad[i].style.pointerEvents = "none";
+
+
+
+  emailjs.send("service_ywhozg1", "template_enmente", {
+    from_name: name,
+    from_email: email,
+    content: subject,
+    message: message
+  }).then(
+    function(response) {
+      console.log("Email sent successfully:", response);
+
+     
+    },
+    function(error) {
+      console.log("Email failed to send:", error);
+ 
+    }
+  );
 }
 
 
-// Modify your JavaScript to toggle the 'open' class
-const burgerBtn = document.querySelector('.btn');
-const menuItemsBurger = document.querySelector('.menu_items_burger');
 
-burgerBtn.addEventListener('click', () => {
-  burgerBtn.classList.toggle('open');
-  menuItemsBurger.classList.toggle('menu_hidden');
-});
 
-function toggleOverlay(containerId) {
-  const container = document.querySelector(`.${containerId}`);
-  if (container.classList.contains('clicked')) {
-    container.classList.remove('clicked');
-  } else {
-    container.classList.add('clicked');
-  }
-}
 
 
