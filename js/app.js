@@ -110,6 +110,37 @@ if (windowWidth<780) {
     };
 };
 
+sendEmail();
+function sendEmail() {
+ 
+  var name = document.getElementById('username').value;
+  var email = document.getElementById('email').value;
+  var subject = document.getElementById('betreff').value;
+  var message = document.getElementById('text').value;
+
+
+
+
+  emailjs.send("service_ywhozg1", "template_enmente", {
+    from_name: name,
+    from_email: email,
+    content: subject,
+    message: message
+  }).then(
+    function(response) {
+      console.log("Email sent successfully:", response);
+
+     
+    },
+    function(error) {
+      console.log("Email failed to send:", error);
+ 
+    }
+  );
+}
+
+
+
 
 
 
