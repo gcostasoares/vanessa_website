@@ -110,35 +110,41 @@ if (windowWidth<780) {
     };
 };
 
-sendEmail();
-function sendEmail() {
- 
-  var name = document.getElementById('username').value;
-  var email = document.getElementById('email').value;
-  var subject = document.getElementById('betreff').value;
-  var message = document.getElementById('text').value;
+
+button = document.getElementById('button');
+
+button.addEventListener('click', function(){
+    sendEmail();
+    function sendEmail() {
+    
+    var name = document.getElementById('username').value;
+    var email = document.getElementById('email').value;
+    var subject = document.getElementById('betreff').value;
+    var message = document.getElementById('text').value;
+    var contact = document.getElementById('kontakt');
+    var success = document.getElementById('success');
 
 
 
-
-  emailjs.send("service_ywhozg1", "template_enmente", {
-    from_name: name,
-    from_email: email,
-    content: subject,
-    message: message
-  }).then(
-    function(response) {
-      console.log("Email sent successfully:", response);
-
-     
-    },
-    function(error) {
-      console.log("Email failed to send:", error);
- 
+    emailjs.send("service_ywhozg1", "template_enmente",{
+        from_name: name,
+        from_email: email,
+        content: subject,
+        message: message
+    }).then(
+        function(response) {
+        console.log("Email sent successfully:", response);
+        contact.style.display = 'none';
+        success.style.display = 'flex'; 
+        
+        },
+        function(error) {
+        console.log("Email failed to send:", error);
+    
+        }
+    );
     }
-  );
-}
-
+});
 
 
 
