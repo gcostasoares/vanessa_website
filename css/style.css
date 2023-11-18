@@ -785,6 +785,10 @@ footer .copyright{
     align-items: center;
     justify-content: center;
     gap: 30px;
+    
+}
+footer a {
+    color: var(--ternary);
 }
 
 @media (max-width: 780px) {
