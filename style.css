@@ -633,7 +633,7 @@ text {
     text-align: start;
   }
   .about-me__text-block {
-    transform: translateX(0);
+    transform: 0 !important;
   }
   .about-me__block img {
     width: 100%;
@@ -896,6 +896,10 @@ section.contact .btn-senden:hover {
 
 .email-address {
   margin: calc(1.5rem * 3) 0;
+}
+
+.footer__content a {
+  color: #84837f;
 }
 
 .button {
