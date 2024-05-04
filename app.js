@@ -1,3 +1,53 @@
+const leistungButtons = document.querySelectorAll('.leistung-button');
+const leistungContent = document.querySelector('.leistung-info-content');
+const leistungCard = document.querySelectorAll('.leistung-card');
+const leistungInfo = document.querySelectorAll('.leistungen_info');
+
+//const leistungBackground = ['#e5dbe2', '#ede1d7', '#f6e8cc'];
+
+let leistungIsOpened = false;
+let z = 0;
+
+leistungButtons.forEach((button, i) => {
+  //leistungCard[i].style.backgroundColor = leistungBackground[i];
+
+  button.addEventListener('click', () => {
+    if (leistungIsOpened) {
+      leistungInfo[z].classList.remove('activated');
+    }
+    
+    //leistungContent.style.backgroundColor = leistungBackground[i];
+    leistungInfo[i].classList.add("activated");
+    const leistungInfoRect = leistungInfo[i].getBoundingClientRect();
+
+    window.scrollTo({
+      top: window.pageYOffset + leistungInfoRect.top,
+      behavior: 'smooth'
+    });
+
+    z = i;
+    leistungIsOpened = true;
+  });
+});
+
+
+
+const backToLeistungen = document.querySelectorAll('.back-to-leistungen');
+
+backToLeistungen.forEach(button => {
+  button.addEventListener('click', () => {
+    const leistungCardTop = document.querySelector('.leistung-card').getBoundingClientRect();
+    window.scrollTo({
+      top: window.pageYOffset + leistungCardTop.top-100,
+      behavior: 'smooth'
+    });
+  });
+});
+
+
+
+
+
 const header = document.querySelector('.header');
 let lastScrollTop = 0;
 let scrolled = false;
@@ -47,7 +97,7 @@ navContainer.addEventListener('click', function() {
   burgerElement.setAttribute('aria-expanded', !isExpanded);
   navElement.style.left = isExpanded ? '100vw' : '0';
   burgerDescendants.forEach(descendant => {
-    descendant.style.backgroundColor = 'white';
+    descendant.style.backgroundColor = isExpanded ? '#b16b51' : 'white';
 });
 });
 
@@ -59,43 +109,6 @@ window.addEventListener('scroll', function() {
     backgroundText.style.setProperty('--scrollFactor', scrollFactor);
 
 });
-
-var textSize = document.querySelector('.perspective-text__size');
-var textPerspective = document.querySelector('.perspective-text');
-
-function textSizeFunction() {
-    var windowWidth = window.innerWidth;
-
-
-    var textSizeRatio = windowWidth / 1000;
-
-    var textSizeRatioValue = textSizeRatio > 1 ? 1 : (textSizeRatio < 1 && textSizeRatio > 0.7 ? textSizeRatio : 0.7);
-
-    textSize.style.setProperty('--textSizeRatioValue', textSizeRatioValue);
-}
-
-textSizeFunction();
-
-window.addEventListener('resize', textSizeFunction);
-
-
-
-var perspectiveText = document.querySelector(".perspective-text");
-
-function activateAnimation() {
-    var perspectiveTextPosition = perspectiveText.offsetTop+400;
-    var scrollPosition = window.scrollY;
-  
-
-
-    if (scrollPosition >= perspectiveTextPosition) {
-        perspectiveText.classList.add("active");
-    } else {
-        perspectiveText.classList.remove("active");
-    }
-}
-
-window.addEventListener("scroll", activateAnimation);
 
 
 const form = document.getElementById('kontakt');
@@ -176,6 +189,14 @@ function setSuccessFor(input) {
 function isEmail(email) {
   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zAZ]{2,}))$/.test(email);
 }
+
+
+
+
+
+
+
+
 
 
 
