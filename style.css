@@ -625,7 +625,7 @@ text {
   flex-direction: row-reverse;
 }
 .about-me__block img {
-  width: 50%;
+  width: 27vw;
 }
 
 .about-me__text-block {
