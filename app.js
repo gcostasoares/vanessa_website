@@ -147,30 +147,33 @@ function checkInputs() {
 
   if (nameValidation && emailValidation && messageValidation) {
     sendEmail();
-    function sendEmail() {
-      var name = document.getElementById('username').value;
-      var email = document.getElementById('email').value;
-      var message = document.querySelector('.message textarea').value;
-      var messageSuccess = document.getElementById('message-success');
-      var messageError = document.getElementById('message-error');
-    
-      emailjs.send("service_8ydndpo", "template_kwpvdnm", {
-        from_name: name,
-        from_email: email,
-        message_textarea: message
-      }).then(
-        function(response) {
-          console.log("Email sent successfully:", response);
-          kontakt.style.display = 'none';
-          messageSuccess.style.display = 'flex';
-        },
-        function(error) {
-          console.log("Email failed to send:", error);
-          messageError.style.display = 'flex';
-        }
-      );
-    }
   }
+}
+
+
+function sendEmail() {
+  emailjs.init("lLIUww44rBc7Ofile");
+  var name = document.getElementById('username').value;
+  var email = document.getElementById('email').value;
+  var message = document.getElementById('text').value;
+  var messageSuccess = document.getElementById('message-success');
+  var messageError = document.getElementById('message-error');
+
+  emailjs.send("service_ywhozg1", "template_enmente", {
+    from_name: name,
+    from_email: email,
+    message_textarea: message
+  }).then(
+    function(response) {
+      console.log("Email sent successfully:", response);
+      kontakt.style.display = 'none';
+      messageSuccess.style.display = 'flex';
+    },
+    function(error) {
+      console.log("Email failed to send:", error);
+      messageError.style.display = 'flex';
+    }
+  );
 }
 
 function setErrorFor(input, message) {
@@ -189,6 +192,7 @@ function setSuccessFor(input) {
 function isEmail(email) {
   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zAZ]{2,}))$/.test(email);
 }
+
 
 
 
