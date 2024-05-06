@@ -884,18 +884,18 @@ section.contact .btn-senden:hover {
   color: var(--primary);
 }
 
-.message-success {
+.message-success,
+.message-error {
   display: none;
   font-family: "Satisfy", cursive;
-  width: 60vw;
-  height: 50px;
   text-align: center;
-  margin-top: 2rem;
-  font-size: 35px;
-  border: 0;
-  text-decoration: none;
-  color: #070606;
-  margin-right: 30px;
+  border: 1px #22211f solid;
+  border-radius: 8px;
+}
+.message-success p,
+.message-error p {
+  color: #22211f;
+  margin: 1rem;
 }
 
 .footer {
@@ -1147,5 +1147,11 @@ section.contact .btn-senden:hover {
   .path-number .correction-2 h2 {
     top: 13px;
     left: 27px;
+  }
+}
+
+@media (max-width: 576px) {
+  .text-quote__block {
+    margin-top: -100px;
   }
 }/*# sourceMappingURL=style.css.map */
