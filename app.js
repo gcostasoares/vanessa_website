@@ -156,8 +156,8 @@ function sendEmail() {
   var name = document.getElementById('username').value;
   var email = document.getElementById('email').value;
   var message = document.getElementById('text').value;
-  var messageSuccess = document.getElementById('message-success');
-  var messageError = document.getElementById('message-error');
+  var messageSuccess = document.getElementById('success');
+  var messageError = document.getElementById('error');
 
   emailjs.send("service_ywhozg1", "template_enmente", {
     from_name: name,
