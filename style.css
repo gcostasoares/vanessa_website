@@ -1154,4 +1154,9 @@ section.contact .btn-senden:hover {
   .text-quote__block {
     margin-top: -100px;
   }
+}
+.leistung-title {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
