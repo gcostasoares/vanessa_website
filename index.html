@@ -15,6 +15,119 @@
     <script defer src="./app.js"></script>
 </head>
 <body>
+
+    <div id="cookieConsent" class="cookie-consent">
+    <div class="cookie-content">
+        <h3>Privatsphäre-Einstellungen</h3>
+        <p>Diese Seite nutzt Website-Tracking-Technologien von Dritten, um ihre Dienste anzubieten, stetig zu verbessern und Werbung entsprechend den Interessen der Nutzer anzuzeigen.</p>
+        <div class="cookie-buttons">
+            <button id="rejectBtn" class="btn-reject">Ablehnen</button>
+            <button id="acceptBtn" class="btn-accept">Akzeptieren</button>
+        </div>
+    </div>
+</div>
+
+<style>
+.cookie-consent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    display: none;
+    z-index: 1000;
+}
+
+.cookie-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.cookie-buttons {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-accept, .btn-reject {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-accept {
+    background: #2196F3;
+    color: white;
+}
+
+.btn-reject {
+    background: #666;
+    color: white;
+}
+
+.btn-accept:hover {
+    background: #1976D2;
+}
+
+.btn-reject:hover {
+    background: #555;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const cookieConsent = document.getElementById('cookieConsent');
+    const acceptBtn = document.getElementById('acceptBtn');
+    const rejectBtn = document.getElementById('rejectBtn');
+
+    // Check if cookie preference is already set
+    if(!getCookie('cookieConsent')) {
+        cookieConsent.style.display = 'block';
+    }
+
+    // Accept button handler
+    acceptBtn.addEventListener('click', function() {
+        setCookie('cookieConsent', 'accepted', 30);
+        cookieConsent.style.display = 'none';
+        // Add code to enable tracking scripts here
+    });
+
+    // Reject button handler
+    rejectBtn.addEventListener('click', function() {
+        setCookie('cookieConsent', 'rejected', 30);
+        cookieConsent.style.display = 'none';
+        // Add code to disable tracking scripts here
+    });
+
+    // Cookie functions
+    function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for(let i=0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+});
+</script>
+
+
+
+    
    <div class="layout">
     <div class="app">
         <div class="wrapper">
