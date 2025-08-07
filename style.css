@@ -1161,6 +1161,10 @@ section.contact .btn-senden:hover {
   text-align: center;
 }/*# sourceMappingURL=style.css.map */
 
+.impressum {
+padding: 0 20vw;
+}
+
 .impressum-container {
 flex-direction: column;
 text-align: start;
